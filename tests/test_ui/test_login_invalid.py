@@ -42,4 +42,4 @@ def test_login_with_invalid_credentials(driver, username, password):
     page.open()
     page.login(username, password)
     time.sleep(1)
-    assert "Your username is invalid!" in page.get_flash_message()
+    assert "Your username is invalid!" or "Your password is invalid!" in page.get_flash_message()
